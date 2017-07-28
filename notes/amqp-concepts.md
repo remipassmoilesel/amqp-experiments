@@ -12,9 +12,9 @@ Queue: Point de consommation d'un message. Un message consommé dans une queue n
 
 Binding: Lien entre un échange et une queue.
 
-Binding key: Identifiant de route. Les routing keys sont comparées aux binding keys pour décider si le message doit être déposé sur une queue ou pas. 
+Binding key: Identifiant de route. Les routing keys sont comparées aux binding keys pour décider si le message doit être déposé sur une queue ou pas. Les identifiants sont insensiblesà la casse.
 
-Routing key: Identifiant sous la forme "abcd.efgh.ijkl". Exemple: "france.languedoc.montpellier"
+Routing key: Identifiant sous la forme "abcd.efgh.ijkl". Exemple: "france.languedoc.montpellier". Les identifiants sont insensiblesà la casse.
 
 ## Types d'échanges
 
