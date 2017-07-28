@@ -1,0 +1,19 @@
+{
+  "name": "poc-seneca-amqp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "svc-math": "node build/beeMath/main.js",
+    "svc-counter": "node build/beeCounter/main.js",
+    "client": "node build/client.js",
+    "clean": "../node_modules/.bin/rimraf build",
+    "lint": "../node_modules/.bin/tslint --force --format verbose \"src/**/*.ts\"",
+    "lint-fix": "npm run lint -- --fix",
+    "compile": "../node_modules/.bin/tsc --pretty",
+    "compile-watch": "../node_modules/.bin/tsc --pretty -w",
+    "clean-compile": "npm run clean && npm run compile",
+    "clean-lint-compile": "npm run clean && npm run lint && echo Using TypeScript && npm run compile"
+  },
+  "author": "Bee",
+  "license": "MIT"
+}
