@@ -26,3 +26,21 @@ Routing key: Identifiant sous la forme "abcd.efgh.ijkl". Exemple: "france.langue
 
     *: représente 0 ou plusieurs éléments. Exemples: france.languedoc.*, france.#.montpellier
     #: représente un élément. Exemples: france.languedoc.#, france.#.montpellier, 
+
+## Acquittement / Aknowledgement
+
+Il est possible d'activer l'acquittement des messages.
+Si il est désactivé, un consommateur qui plante aura consommé le message, et le message ne sera plus disponible pour personne (la tâche est perdue).
+Si il est activé, le consommateur doit acquitter le message à la fin de sa tâche, et le message disparait de la queue. 
+Sinon le message sera distribué à un potentiel autre consommateur, ou redistribuer au retour du consommateur.
+
+## Répartition des messages
+
+Il est possible de répartir les messages accumulés sur une queue. Un client peut demander à ne pas recevoir plus de 'n' message.
+
+## Fermeture de connection
+
+Il est préférable de tenter de fermer la connexion avant de quitter, pour éventuellement vider les canaux de comm (flush)
+Dans les exemples d'AmqpLib, ce code apprait sur certains exemples:
+    
+    process.once('SIGINT', function() { conn.close(); });
